@@ -36,7 +36,6 @@ import {
 
 import { useState } from "react";
 import Link from "next/link";
-import { Resend } from "resend";
 const ContactUs = () => {
   const [sender_email, set_sender_email] = useState("");
   const [sender_phone, set_sender_phone] = useState("");
@@ -46,24 +45,38 @@ const ContactUs = () => {
   const month = Newdate.getMonth();
   const CurrentMonth = month + 1;
   const year = Newdate.getFullYear();
-  const hour = Newdate.getHours();
-  const minute = Newdate.getMinutes();
   const [sender_service, set_sender_service] = useState("");
-  const [senderDate, setSenderDate] = useState(
-    date + "-" + CurrentMonth + "-" + year
-  );
   const [check, setCheck] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+  function clearForm() {
+    set_sender_phone("");
+    set_sender_email("");
+    set_sender_name("");
+    set_sender_service("");
+    setCheck(false);
+  }
+
   const submit = async (e) => {
     e.preventDefault();
+    console.log(e, "event");
     const response = await fetch("/api/send-email", {
       method: "POST",
+      body: JSON.stringify({
+        name: e.target[0].value,
+        email: e.target[2].value,
+        phone: e.target[3].value,
+        service: e.target[1].value,
+      }),
     });
     const data = await response.json();
-    alert("Tu mensaje ha sido enviado", data);
+    const isSuccessful = data.error === null;
+    if (isSuccessful) {
+      clearForm();
+      alert("Tu mensaje ha sido enviado", data);
+    }
   };
 
   return (
