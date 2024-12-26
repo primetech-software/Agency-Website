@@ -39,7 +39,6 @@ import axios from "axios";
 import { send } from "emailjs-com";
 import Link from "next/link";
 const ContactUs = () => {
-
   const [sender_email, set_sender_email] = useState("");
   const [sender_phone, set_sender_phone] = useState("");
   const [sender_name, set_sender_name] = useState("");
@@ -59,7 +58,7 @@ const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [service, setService] = useState("");
-  const [phone, setPhone] = useState("")
+  const [phone, setPhone] = useState("");
 
   const sendMail = (e) => {
     e.preventDefault();
@@ -156,80 +155,80 @@ const ContactUs = () => {
     <Section id="contact-us">
       <Container>
         <UpperSection>
-          <TitleContact>Lets Discuss Your Project</TitleContact>
+          <TitleContact>Hablemos sobre tus necesidades</TitleContact>
         </UpperSection>
         <BottomSection>
           <LeftSection>
             <ContactDetails>
               <Contact>
                 <DetailIcons>
-                  <MailIcon aria-label="Send us an email"/>
+                  <MailIcon aria-label="Send us an email" />
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Email</DetailTitle>
-                  <Link href="mailto:hello@intelpik.com" passHref>
-                    <a aria-label="Send an email to intelpik@gmail.com">
-                      {" "}
-                      <DetailDescription>hello@intelpik.com</DetailDescription>
-                    </a>
+                  <Link href="mailto:hi.primetech@gmail.com" passHref>
+                    <DetailDescription>
+                      hi.primetech@gmail.com
+                    </DetailDescription>
                   </Link>
                 </Detail>
               </Contact>
               <Contact>
                 <DetailIcons>
-                  <PhoneIcon aria-label="Call us"/>
+                  <PhoneIcon aria-label="Call us" />
                 </DetailIcons>
                 <Detail>
-                  <DetailTitle>Phone</DetailTitle>
-                  <Link href="tel:+918590302905" passHref>
-                    <a aria-label="Call +91 8590302905">
-                      <DetailDescription>+91 8590302905</DetailDescription>
-                    </a>
+                  <DetailTitle>Telefono</DetailTitle>
+                  <Link href="tel:+34667257687" passHref>
+                    <DetailDescription>+34 667257687</DetailDescription>
                   </Link>
                 </Detail>
               </Contact>
-              <Contact>
+              {/* <Contact>
                 <DetailIcons>
-                  <SocialIcon aria-label="Follow us on social media"/>
+                  <SocialIcon aria-label="Follow us on social media" />
                 </DetailIcons>
                 <Detail>
                   <DetailTitle>Social</DetailTitle>
                   <SocialDiv>
-                  <Link href="https://www.linkedin.com/company/intelpik/" passHref>
-                  <a aria-label="Visit Intelpik LinkedIn page" target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href="https://www.linkedin.com/company/intelpik/"
+                      passHref
+                    >
                       <DetailDescription>LinkedIn</DetailDescription>
-                    </a>
-                  </Link>
-                  <Link href="https://www.instagram.com/intelpik.official/" passHref>
-                  <a aria-label="Visit Intelpik Instagram page" target="_blank" rel="noopener noreferrer">
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/intelpik.official/"
+                      passHref
+                    >
                       <DetailDescription>Instagram</DetailDescription>
-                    </a>
-                  </Link>
+                    </Link>
                   </SocialDiv>
                 </Detail>
-                
-              </Contact>
+              </Contact> */}
             </ContactDetails>
           </LeftSection>
           <RightSection>
             <Form onSubmit={submit} id="contact-form">
-              <GetaQuote>Get a quote</GetaQuote>
+              <GetaQuote>Habla con nosotros</GetaQuote>
               {/* <ScheduleP>Schedule an Appointment</ScheduleP> */}
               <ContactForm>
-              <label htmlFor="contact-name"> Hey👋my name is</label> &nbsp;
+                <label htmlFor="contact-name"> Hey👋 mi nombre es ...</label>{" "}
+                &nbsp;
                 <NameInput
-                 id="contact-name"
+                  id="contact-name"
                   type="text"
                   value={sender_name}
-                  placeholder="&nbsp; Your name"
+                  placeholder="&nbsp; Tu nombre"
                   onChange={(e) => {
                     set_sender_name(e.target.value);
                     setName(e.target.value);
                   }}
                   required
                 />
-
-                &nbsp;<label htmlFor="contact-service"> and I&apos;m looking for </label>&nbsp;
+                &nbsp;
+                <label htmlFor="contact-service"> Y estoy buscando </label>
+                &nbsp;
                 <Dropdowns
                   id="contact-service"
                   value={sender_service}
@@ -239,29 +238,42 @@ const ContactUs = () => {
                   }}
                   required
                 >
-                  <option value="Web Development">Web Development</option>
-                  <option value="Digital Marketing">Digital Marketing</option>
-                  <option value="App Developement">App Development</option>
+                  <option value="Web Development">Desarrollo Web</option>
+                  <option value="SEO">SEO</option>
+                  <option value="App Developement">
+                    Desarrollo Aplicaciones
+                  </option>
+                  <option value="Chatbot">
+                    Desarrollo chatbot y automatizaciones
+                  </option>
+                  <option value="cybersecurity">
+                    Auditorias de Ciberseguridad
+                  </option>
+                  <option value="custom">Servicios personalizados</option>
+                  <option value="maintenance">
+                    Mantenimiento de aplicaciones web o mobile
+                  </option>
                 </Dropdowns>
                 <br />
-                <label htmlFor="contact-email">Ping us at 😉</label>&nbsp;
+                <label htmlFor="contact-email">Danos un toque 😉</label>&nbsp;
                 <EmailInput
                   id="contact-email"
                   type="email"
                   value={sender_email}
-                  placeholder="&nbsp; Your Email Address"
+                  placeholder="&nbsp; Tu correo electronico"
                   onChange={(e) => {
                     set_sender_email(e.target.value);
                     setEmail(e.target.value);
                   }}
                   required
                 />
-                <label htmlFor="contact-phone">Contact number📞</label>&nbsp;
+                <label htmlFor="contact-phone">Telefono de contacto📞</label>
+                &nbsp;
                 <PhoneInput
                   id="contact-phone"
                   type="tel"
                   value={sender_phone}
-                  placeholder="Your Phone Number"
+                  placeholder="Tu numero de telefono"
                   onChange={(e) => {
                     set_sender_phone(e.target.value);
                     setPhone(e.target.value);
@@ -270,21 +282,20 @@ const ContactUs = () => {
                 />
               </ContactForm>
               <TermsCheckbox>
-                <label  style={{ display: 'flex', alignItems: 'center' }}>
-                <Checkbox
-                  type="checkbox"
-                  required
-                  onChange={(e) => {
-                    setCheck(e.target.checked);
-                  }}
-                 
-                />
-                <CheckboxTitle>
-                  I have accepted all the terms and conditions
-                </CheckboxTitle>
+                <label style={{ display: "flex", alignItems: "center" }}>
+                  <Checkbox
+                    type="checkbox"
+                    required
+                    onChange={(e) => {
+                      setCheck(e.target.checked);
+                    }}
+                  />
+                  <CheckboxTitle>
+                    Estoy de acuerdo con los términos y condiciones
+                  </CheckboxTitle>
                 </label>
               </TermsCheckbox>
-              <SubmitForm type="Submit">Send Enquiry</SubmitForm>
+              <SubmitForm type="Submit">Enviar peticion</SubmitForm>
             </Form>
           </RightSection>
         </BottomSection>

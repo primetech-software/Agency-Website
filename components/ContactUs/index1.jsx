@@ -57,7 +57,7 @@ const ContactUs1 = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [service, setService] = useState("");
-  const [phone, setPhone] = useState("")
+  const [phone, setPhone] = useState("");
 
   const sendMail = (e) => {
     e.preventDefault();
@@ -122,90 +122,71 @@ const ContactUs1 = (props) => {
     SheetSubmit(e);
     sendMail(e);
   };
-  var Services = [
-    "App Development",
-    "Web Development",
-    "UI/UX Desgin",
-    "Web Hosting",
-    "SEO ",
-  ];
-  const options = [
-    { key: "angular", text: "Angular", value: "angular" },
-    { key: "css", text: "CSS", value: "css" },
-    { key: "design", text: "Graphic Design", value: "design" },
-    { key: "ember", text: "Ember", value: "ember" },
-    { key: "html", text: "HTML", value: "html" },
-    { key: "ia", text: "Information Architecture", value: "ia" },
-    { key: "javascript", text: "Javascript", value: "javascript" },
-    { key: "mech", text: "Mechanical Engineering", value: "mech" },
-    { key: "meteor", text: "Meteor", value: "meteor" },
-    { key: "node", text: "NodeJS", value: "node" },
-    { key: "plumbing", text: "Plumbing", value: "plumbing" },
-    { key: "python", text: "Python", value: "python" },
-    { key: "rails", text: "Rails", value: "rails" },
-    { key: "react", text: "React", value: "react" },
-    { key: "repair", text: "Kitchen Repair", value: "repair" },
-    { key: "ruby", text: "Ruby", value: "ruby" },
-    { key: "ui", text: "UI Design", value: "ui" },
-    { key: "ux", text: "User Experience", value: "ux" },
-  ];
-  const defaultOption = "Select Service";
   return (
-    <HeroForm id="heroContact"
-      initial={{opacity:0}}
-      animate={{opacity:1}}
-      transition={{delay:2}}
+    <HeroForm
+      id="heroContact"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 2 }}
     >
       <Form onSubmit={submit}>
-        <GetaQuote>Get a quote</GetaQuote>
+        <GetaQuote>Habla con nosotros</GetaQuote>
         {/* <ScheduleP>Schedule an Appointment</ScheduleP> */}
         <ContactForm>
-        <label htmlFor="name">  Hey👋my name is </label> &nbsp;
+          <label htmlFor="name"> Hey👋 mi nombre es... </label> &nbsp;
           <NameInput
             id="name"
             type="text"
             value={sender_name}
-            placeholder="&nbsp; Your name"
+            placeholder="&nbsp; Tu Nombre"
             onChange={(e) => {
               set_sender_name(e.target.value);
               setName(e.target.value);
             }}
             required
           />
-
-&nbsp;<label htmlFor="service"> and I&apos;m looking for </label>&nbsp;
+          &nbsp;<label htmlFor="service">Y estoy buscando </label>
+          &nbsp;
           <Dropdowns
-          id="service"
+            id="service"
             value={sender_service}
-            placeholder="&nbsp; Select a service"
+            placeholder="&nbsp; Selecciona un setvicio"
             onChange={(e) => {
               set_sender_service(e.target.value);
             }}
             required
           >
-            <option value="Web Development">Web Development</option>
-            <option value="Digital Marketing">Digital Marketing</option>
-            <option value="App Developement">App Development</option>
+            <option value="Web Development">Desarrollo Web</option>
+            <option value="SEO">SEO</option>
+            <option value="App Developement">Desarrollo Aplicaciones</option>
+            <option value="Chatbot">
+              Desarrollo chatbot y automatizaciones
+            </option>
+            <option value="cybersecurity">Auditorias de Ciberseguridad</option>
+            <option value="custom">Servicios personalizados</option>
+            <option value="maintenance">
+              Mantenimiento de aplicaciones web o mobile
+            </option>
           </Dropdowns>
           <br />
-          <label htmlFor="email">Ping us at 😉</label>&nbsp;
+          <label htmlFor="email">Danos un toque 😉</label>&nbsp;
           <EmailInput
-           id="email"
+            id="email"
             type="email"
             value={sender_email}
-            placeholder="&nbsp; Your Email Address"
+            placeholder="&nbsp; Tu correo electronico"
             onChange={(e) => {
               set_sender_email(e.target.value);
               setEmail(e.target.value);
             }}
             required
           />
-               <label htmlFor="phone">Contact number📞</label>&nbsp;
+          <label htmlFor="phone">Numero de contacto📞</label>&nbsp;
           <PhoneInput
             id="phone"
             type="tel"
             value={sender_phone}
-            placeholder="Your Phone Number"
+            placeholder="Tu numero de telefono"
             onChange={(e) => {
               set_sender_phone(e.target.value);
               setPhone(e.target.value);
@@ -214,20 +195,18 @@ const ContactUs1 = (props) => {
           />
         </ContactForm>
         <TermsCheckbox>
-          <label  style={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox
-            type="checkbox"
-            onChange={(e) => {
-              setCheck(e.target.checked);
-            }}
-            required
-          />
-          <CheckboxTitle>
-            I have accepted all the terms and conditions
-          </CheckboxTitle>
+          <label style={{ display: "flex", alignItems: "center" }}>
+            <Checkbox
+              type="checkbox"
+              onChange={(e) => {
+                setCheck(e.target.checked);
+              }}
+              required
+            />
+            <CheckboxTitle>Acepto los terminos y condiciones</CheckboxTitle>
           </label>
         </TermsCheckbox>
-        <SubmitForm type="Submit">Send Enquiry</SubmitForm>
+        <SubmitForm type="Submit">Enviar peticion</SubmitForm>
       </Form>
     </HeroForm>
   );

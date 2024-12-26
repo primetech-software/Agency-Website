@@ -1,55 +1,98 @@
-import React from 'react'
-import { BeginButton, Container, Left, LeftCaption, LeftDescription, LeftHeader, LeftHeading, LeftImg, LeftImgDiv, Numbers, Right, RightParagraph, RightSections, Section } from './Features.styled'
-import Link from 'next/link'
+import React from "react";
+import {
+  BeginButton,
+  Container,
+  Left,
+  LeftCaption,
+  LeftDescription,
+  LeftHeader,
+  LeftHeading,
+  LeftImg,
+  LeftImgDiv,
+  Numbers,
+  Right,
+  RightParagraph,
+  RightSections,
+  Section,
+} from "./Features.styled";
+import Link from "next/link";
 
 function Features() {
   return (
     <Section>
-        <Container>
-            <Left>
-                <LeftHeader>
-                <LeftCaption>Why Us</LeftCaption>
-                <LeftHeading>Still unsure?</LeftHeading>
-                <LeftDescription>Here are 3 reasons you should partner with us!</LeftDescription>
-                </LeftHeader>
-                   
-
-            </Left>
-            <LeftImg >
-            <Link href="#contact-form" passHref><BeginButton>Let&apos;s Begin</BeginButton></Link>
-                    </LeftImg>
-            <Right>
-                <RightSections>
-                    <Numbers>
-                        <h2>100%</h2>
-                        <p>Happy Clients</p>
-                    </Numbers>
-                    <RightParagraph>
-                        We are proud to have a 100% satisfaction rating from our clients.
-                    </RightParagraph>
-                </RightSections>
-                <RightSections>
-                    <Numbers>
-                        <h2>78%</h2>
-                        <p>Increase in Leads</p>
-                    </Numbers>
-                    <RightParagraph>
-                        Our clients have seen an average of 78% increase in leads within 6 months of working with us.
-                    </RightParagraph>
-                </RightSections>
-                <RightSections>
-                    <Numbers>
-                        <h2>3x</h2>
-                        <p>Growth for Clients</p>
-                    </Numbers>
-                    <RightParagraph>
-                        Our clients have seen an average of 3x growth in traffic, leads, and sales after working with us.
-                    </RightParagraph>
-                </RightSections>
-            </Right>
-        </Container>
+      <Container>
+        <Left>
+          <LeftHeader>
+            <LeftCaption>Porque nosotros</LeftCaption>
+            <LeftHeading>Sigues con dudas?</LeftHeading>
+            <LeftDescription>
+              Algunas de las razones por las que deberías elegirnos.
+            </LeftDescription>
+          </LeftHeader>
+        </Left>
+        <LeftImg>
+          <Link href="#contact-form" passHref>
+            <BeginButton>Empecemos</BeginButton>
+          </Link>
+        </LeftImg>
+        <Right>
+          <RightSections>
+            <Numbers>
+              <h2>100%</h2>
+              <p>Clientes satisfechos</p>
+            </Numbers>
+            <RightParagraph>
+              Hemos tenido un 100% de satisfacción del cliente con nuestros
+              servicios.
+            </RightParagraph>
+          </RightSections>
+          <RightSections>
+            <Numbers>
+              <h2>78%</h2>
+              <p>Incremento en leads</p>
+            </Numbers>
+            <RightParagraph>
+              Nuestros clientes han visto un aumento del 78% en leads después de
+              trabajar con nosotros.
+            </RightParagraph>
+          </RightSections>
+          <RightSections>
+            <Numbers>
+              <h2>3x</h2>
+              <p>Crecimiento de nuestros clientes</p>
+            </Numbers>
+            <RightParagraph>
+              Nuestros clientes han experimentado un crecimiento 3 veces mayor
+              después de trabajar con nosotros
+            </RightParagraph>
+          </RightSections>
+          <RightSections>
+            <Numbers>
+              <h2>Presupuesto</h2>
+              <p>Nos adaptamos a tu forma de pago</p>
+            </Numbers>
+            <RightParagraph>
+              Entendemos que cada cliente es diferente, por lo que nos adaptamos
+              a tu forma de pago
+            </RightParagraph>
+          </RightSections>
+          <RightSections>
+            <Numbers>
+              <h2>Know how</h2>
+              <p>
+                Ponemos el conocimiento de las grandes multinacionales a
+                disposicion de PYMES
+              </p>
+            </Numbers>
+            <RightParagraph>
+              Hemos trabajado con grandes empresas y ahora queremos poner ese
+              conocimiento a disposicion de las PYMES de una forma asequible
+            </RightParagraph>
+          </RightSections>
+        </Right>
+      </Container>
     </Section>
-  )
+  );
 }
 
-export default Features
+export default Features;
