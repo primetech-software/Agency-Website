@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      const resend = new Resend(process.env.RESEND_API_KEY);
+      const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
       const response = await resend.emails.send({
         from: "PrimeTech<hello@primetech-agency.com>",
         to: [email],
