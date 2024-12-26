@@ -59,16 +59,11 @@ const ContactUs = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    const resend = new Resend("re_123456789");
-    const response = await resend.emails.send({
-      from: "PrimeTech<hi.primetech@gmail.com>",
-      to: ["alexkononenko6@protonmail.com"],
-      subject: "Prueba de envio de correo",
-      html: "<h1>Prueba de envio de correo</h1>",
+    const response = await fetch("/api/send-email", {
+      method: "POST",
     });
-    if (response.status === 200) {
-      alert("Correo enviado correctamente");
-    }
+    const data = await response.json();
+    alert("Tu mensaje ha sido enviado", data);
   };
 
   return (
