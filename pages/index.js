@@ -6,44 +6,43 @@ export default function Home() {
     <>
       <Head>
         <title>[PrimeTech]</title>
-        <meta name="title" content="Intelpik " />
+        <meta name="title" content="Primetech" />
         <meta
           name="description"
-          content="Intelpik is a freelance team of industry experts  providing digital solutions like Web Development,App Development and Branding."
+          content="Primetech es un equipo de expertos de la industria que proporciona soluciones digitales como Desarrollo Web, Desarrollo de Aplicaciones y Branding. Desarrollo web Valencia"
         />
         <meta
           name="keywords"
-          content="Intelpik, intelpik,intelpik.com,web development,kerala,kollam,trivandrum,india,freelance,freelance developers,best developer intelpik,intelpik freelance team,intelpik web developers,intelpik,INTELPIK,WEB DEVELOPMENT,intelpik,intelpic"
+          content="Primetech, primetech,primetech.com,desarrollo web,valencia,desarrollo de aplicaciones,freelance,desarrolladores freelance,mejor desarrollador primetech,equipo freelance primetech,desarrolladores web primetech,PRIMETECH,DESARROLLO WEB,primetech,desarrollo de aplicaciones"
         />
         <meta name="robots" content="index, follow" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta
           name="copyright"
-          content="Intelpik . © Copyright 2022, All Rights Reserved."
+          content="Primetech. © Copyright 2024, Todos los derechos reservados."
         ></meta>
-        <meta name="language" content="English" />
+        <meta name="language" content="Español" />
         <meta name="revisit-after" content="7 days" />
-        <meta name="author" content="Intelpik Junaid S" />
+        <meta name="author" content="Primetech Junaid S" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Intelpik" />
+        <meta property="og:title" content="Primetech" />
         <meta
           property="og:description"
-          content="Intelpik is a freelance team of industry experts  providing digital solutions like Web Development,App Development and Branding."
+          content="Primetech es un equipo freelance de expertos de la industria que proporciona soluciones digitales como Desarrollo Web, Desarrollo de Aplicaciones y Branding."
         />
         <meta property="og:image" content="/images/banner.jpeg" />
 
         {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="Intelpik" />
+        <meta property="twitter:title" content="Primetech" />
         <meta
           property="twitter:description"
-          content="Intelpik is a freelance team of industry experts  providing digital solutions like Web Development,App Development and Branding."
+          content="Primetech es un equipo freelance de expertos de la industria que proporciona soluciones digitales como Desarrollo Web, Desarrollo de Aplicaciones y Branding."
         />
-        <meta property="twitter:image" content="/images/banner.jpeg"></meta>
 
         <link
           rel="apple-touch-icon"
