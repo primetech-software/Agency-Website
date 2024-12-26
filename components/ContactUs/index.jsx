@@ -34,10 +34,9 @@ import {
   SocialDiv,
 } from "./ContactUs.styled";
 
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { send } from "emailjs-com";
+import { useState } from "react";
 import Link from "next/link";
+import { Resend } from "resend";
 const ContactUs = () => {
   const [sender_email, set_sender_email] = useState("");
   const [sender_phone, set_sender_phone] = useState("");
@@ -54,103 +53,24 @@ const ContactUs = () => {
     date + "-" + CurrentMonth + "-" + year
   );
   const [check, setCheck] = useState(false);
-  const [senderTime, setSenderTime] = useState(hour + ":" + minute);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [service, setService] = useState("");
   const [phone, setPhone] = useState("");
 
-  const sendMail = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    send(
-      "service_p2zntyf",
-      "template_f4vbnzh",
-      { sender_name, sender_email, sender_service, senderDate, senderTime },
-      "HiwseFxtuDnSuFCo_"
-    )
-      .then((response) => {
-        console.log("message sent succesfully", response.status, response.text);
-      })
-      .catch((err) => {
-        console.log("Failed", err);
-      });
-    set_sender_name("");
-    set_sender_email("");
-    set_sender_service("");
-    set_sender_phone("");
-    setSenderDate("");
-    setSenderTime("");
-    setService("");
-    setEmail("");
-    setName("");
-    setPhone("");
-    setCheck(false);
+    const resend = new Resend("re_123456789");
+    const response = await resend.emails.send({
+      from: "PrimeTech<hi.primetech@gmail.com>",
+      to: ["alexkononenko6@protonmail.com"],
+      subject: "Prueba de envio de correo",
+      html: "<h1>Prueba de envio de correo</h1>",
+    });
+    if (response.status === 200) {
+      alert("Correo enviado correctamente");
+    }
   };
 
-  const SheetSubmit = (e) => {
-    e.preventDefault();
-    // console.log(name,email,message)
-    const data = {
-      Name: sender_name,
-      Email: sender_email,
-      Phone: sender_phone,
-      Service: sender_service,
-      Date: senderDate,
-      Time: senderTime,
-    };
-    axios
-      .post(
-        "https://sheet.best/api/sheets/69f079ba-8f87-4135-a184-a6709080c738",
-        data
-      )
-      .then((response) => {
-        console.log(response);
-        setName("");
-        setEmail("");
-        setPhone("");
-        set_sender_name("");
-        set_sender_email("");
-        set_sender_service("");
-        set_sender_phone("");
-        setService("");
-        set_sender_service("");
-        setSenderTime("");
-        setSenderDate("");
-        setCheck(false);
-      });
-  };
-  const submit = (e) => {
-    SheetSubmit(e);
-    sendMail(e);
-  };
-  var Services = [
-    "App Development",
-    "Web Development",
-    "UI/UX Desgin",
-    "Web Hosting",
-    "SEO ",
-  ];
-  const options = [
-    { key: "angular", text: "Angular", value: "angular" },
-    { key: "css", text: "CSS", value: "css" },
-    { key: "design", text: "Graphic Design", value: "design" },
-    { key: "ember", text: "Ember", value: "ember" },
-    { key: "html", text: "HTML", value: "html" },
-    { key: "ia", text: "Information Architecture", value: "ia" },
-    { key: "javascript", text: "Javascript", value: "javascript" },
-    { key: "mech", text: "Mechanical Engineering", value: "mech" },
-    { key: "meteor", text: "Meteor", value: "meteor" },
-    { key: "node", text: "NodeJS", value: "node" },
-    { key: "plumbing", text: "Plumbing", value: "plumbing" },
-    { key: "python", text: "Python", value: "python" },
-    { key: "rails", text: "Rails", value: "rails" },
-    { key: "react", text: "React", value: "react" },
-    { key: "repair", text: "Kitchen Repair", value: "repair" },
-    { key: "ruby", text: "Ruby", value: "ruby" },
-    { key: "ui", text: "UI Design", value: "ui" },
-    { key: "ux", text: "User Experience", value: "ux" },
-  ];
-  const defaultOption = "Select Service";
   return (
     <Section id="contact-us">
       <Container>
